@@ -12,7 +12,7 @@
 #
 
 Rails.application.routes.draw do
-  root "users#index"
+  root "session#new"
   get "/users/edit" => 'users#edit', :as => "edit_user"
   resources :users, :except => [:edit]
 

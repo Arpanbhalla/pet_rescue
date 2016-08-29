@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
   before_action :authorise, :only => [:index, :edit]
 
-  def index
-    @users = User.all
-  end
+  # def index
+  #   @users = User.all
+  # end
 
   def show
-    @user = User.find( params[:id] )
+    @user = User.all
   end
 
   def new
@@ -44,11 +44,11 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation, :image)
+      params.require(:user).permit(:first_name,:last_name,:email, :password, :password_confirmation, :image,:address,:mobile)
     end
 
     def authorise
-      flash[:error] = "You need to be logged in to see that" unless @current_user.present?
+      # flash[:error] = "You need to be logged in to see that" unless @current_user.present?
       redirect_to login_path unless @current_user.present?
     end
 end

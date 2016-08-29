@@ -16,7 +16,8 @@
         position: absolute;
         top: 5%;
         left: 32%;
-        background: green
+        background-color:rgba(0, 0, 0, 0.3);
+        filter: alpha(opacity=50)
 
 }
 
@@ -41,4 +42,17 @@ img {
       right: 1.5%;
       top: 2%;
       border-radius: 210px;
+}
+.delete_account{
+  text-decoration: none;
+    color: black;
+    position: absolute;
+    right: 16%;
+    font-family: sans-serif;
+}
+.welcome_msg {
+  position: absolute;
+  left: 45%;
+  top: 2%;
+  font-family: Lobster;
 }
