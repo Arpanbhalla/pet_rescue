@@ -1,11 +1,11 @@
 <%#= @user.to_json %>
-<h1><%= @user.name %></h1>
-
-<ul>
-  <li><%= @user.email %></li>
-  <li><%= @user.image %></li>
-  <li><%= @user.admin %></li>
-</ul>
+<h1><%= "Welcome #{@user.first_name} "%></h1>
+<div class = "profile_pic"><%= image_tag @user.image %></div>
+<!-- <ul>
+  <li><%#= @user.email %></li>
+  <li><%#= @user.image %></li>
+  <li><%#= @user.admin %></li>
+</ul> -->
 
 <% if @current_user && @current_user.id == @user.id %>
 

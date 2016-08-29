@@ -1,8 +1,44 @@
 
   form {
     display: block;
-    margin-top: 0em;
-    position: absolute;
-    left: 40%;
-    top: 35%;
+        margin-top: 0em;
+        position: relative;
+        left: 5%;
+        top: 5%;
+}
+
+.sign_up {
+        color: #bbbbbb;
+        width: 40%;
+        height: 90%;
+        border: solid;
+        border-radius: 3%;
+        position: absolute;
+        top: 5%;
+        left: 32%;
+        background: green
+
+}
+
+input {
+      width: 70%;
+      height: 35px;
+      border: solid .1px black;
+      font-style: italic;
+      align-items: center;
+      position: relative;
+      left: 9%;
+
+}
+.new_user {
+  padding-top: 2%;
+  padding-bottom:2%;
+}
+img {
+      position: absolute;
+      height: 12%;
+      width: 6%;
+      right: 1.5%;
+      top: 2%;
+      border-radius: 210px;
 }

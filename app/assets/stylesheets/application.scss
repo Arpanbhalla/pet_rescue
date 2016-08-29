@@ -13,3 +13,45 @@
  *= require_tree .
  *= require_self
  */
+
+
+.btn_login {
+  text-decoration: none;
+  color: black;
+  font-family: sans-serif;
+  position: absolute;
+  right: 12%;
+
+}
+.btn_signup {
+  text-decoration: none;
+  color: black;
+  font-family: sans-serif;
+  position: absolute;
+  right: 5%;
+}
+body {
+  background-image: image-url("back4.jpg");
+  background-size: cover;
+}
+
+.edit_profile {
+  text-decoration: none;
+  color: black;
+  font-family: sans-serif;
+  position: absolute;
+  right: 12%;
+}
+
+.log_out {
+  text-decoration: none;
+  color: black;
+  font-family: sans-serif;
+  position: absolute;
+  right: 5%;
+}
+.navigation_box {
+  height: 10%;
+  width: 100%;
+  background-color: blue;
+}

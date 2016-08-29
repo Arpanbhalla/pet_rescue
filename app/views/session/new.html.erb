@@ -1,14 +1,14 @@
-<h1>Login</h1>
 
+<div class = "login_details">
 <%= form_tag login_path do %>
   <p>
-    <%= label_tag :email %>
-    <%= email_field_tag :email, "", :required => true %>
+
+    <%= email_field_tag :email, "", :required => true, :placeholder => "Enter your email "%>
   </p>
   <p>
-    <%= label_tag :password %>
-    <%= password_field_tag :password, "", :required => true %>
+    <%= password_field_tag :password, "", :required => true, :placeholder => "Enter you password" %>
   </p>
 
   <%= submit_tag "Login" %>
 <% end %>
+</div>
