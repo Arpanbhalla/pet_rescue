@@ -15,3 +15,8 @@
 <% if @animal.user %>
   <p>Owner: <%= link_to(@animal.user.first_name, @animal.user) %></p>
 <% end %>
+
+<div class="controls">
+  <%= link_to "Edit Animal", edit_animal_path(@animal) %>
+  <%= link_to "Delete Animal", @animal, :method => :delete, :data => { :confirm => "Are you sure?" } %>
+</div>

@@ -10,4 +10,9 @@ class ApplicationController < ActionController::Base
       @current_user = User.find_by(:id => session[:user_id]) if session[:user_id]
       session[:user_id] = nil unless @current_user.present?
     end
+
+    def authorise
+      # flash[:error] = "You need to be logged in to see that" unless @current_user.present?
+      redirect_to login_path unless @current_user.present?
+    end
 end

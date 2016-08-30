@@ -1,0 +1,32 @@
+<h4>Add New animal to sell</h4>
+
+<%= form_for @animal do |f| %>
+  <p>
+    <%= f.text_field :species, :required => true, :placeholder => "Species Type" %>
+  </p>
+  <p>
+    <%= f.text_field :breed, :required => true ,:placeholder => "Breed"%>
+  </p>
+  <p>
+    <%= f.text_field :sex, :required => true, :placeholder => "Sex" %>
+  </p>
+  <p>
+    <%= f.url_field :images, :required => false, :placeholder => "Images" %>
+  </p>
+  <p>
+    <%= f.text_field :dob, :required => true, :placeholder => "Date of Birth" %>
+  </p>
+  <p>
+    <%= f.text_field :description, :required => true, :placeholder => "Description" %>
+  </p>
+  <p>
+    <%= f.text_field :price, :required => true, :placeholder => "Price" %>
+  </p>
+  <p>
+    <%= f.collection_select(:user_id, User.all, :id, :first_name) %>
+  </p>
+
+  <!-- Have a dropdown of all artists -->
+
+  <%= f.submit %>
+<% end %>
