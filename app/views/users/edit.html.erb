@@ -15,7 +15,7 @@
     <p><%= error %></p>
   <% end %>
 <% end %>
-<%= link_to "Delete Account", user_path( @current_user.id ), :method => :delete, :class => "delete_account" %>
+<%= link_to "Delete Account", user_path( @current_user.id ), :method => :delete, :class => "delete_account" , :data => { :confirm => "Are you sure?" }%>
 
 <div class = "sign_up">
 <%= form_for @user do |f| %>

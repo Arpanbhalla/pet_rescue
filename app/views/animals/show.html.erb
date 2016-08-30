@@ -1,2 +1,17 @@
-<h1>Animals#show</h1>
-<p>Find me in app/views/animals/show.html.erb</p>
+<h2><%= @animal.species %></h2>
+
+<%= image_tag( @animal.images ) %>
+
+<p>Breed: <%= @animal.breed %></p>
+
+<p>Sex: <%= @animal.sex %></p>
+
+<p>Date of birth: <%= @animal.dob %></p>
+
+<p>Description: <%= @animal.description %></p>
+
+<p>Price: <%= @animal.price %></p>
+
+<% if @animal.user %>
+  <p>Owner: <%= link_to(@animal.user.first_name, @animal.user) %></p>
+<% end %>
