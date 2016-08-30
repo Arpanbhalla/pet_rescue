@@ -1,7 +1,8 @@
 <h2 class ="heading_animal">All animals for sale</h2>
-
+<div class='animal_image'>
 <% @animals.each do |w| %>
   <p>
-    <%= link_to( image_tag( w.images ), animal_path(w), :class => "animal_image" ) %>
+    <%= link_to(image_tag(w.images), animal_path(w)) %>
   </p>
 <% end %>
+</div>
