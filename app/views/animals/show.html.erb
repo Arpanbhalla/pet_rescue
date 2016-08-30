@@ -1,5 +1,5 @@
-<h2><%= @animal.species %></h2>
-<div class = "animal_details">
+<h2 class="heading"><%= @animal.species %></h2>
+
 <%= image_tag(@animal.images, :class => 'animal_display_image') %>
 
 <p>Breed: <%= @animal.breed %></p>
@@ -15,5 +15,3 @@
 <% if @animal.user %>
   <p>Owner: <%= link_to(@animal.user.first_name, @animal.user) %></p>
 <% end %>
-
-</div>

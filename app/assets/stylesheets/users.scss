@@ -3,8 +3,8 @@
     display: block;
         margin-top: 0em;
         position: relative;
-        left: 5%;
-        top: 5%;
+        // left: 5%;
+        // top: 5%;
 }
 
 .sign_up {
@@ -13,9 +13,9 @@
         height: 90%;
         border: solid;
         border-radius: 3%;
-        position: absolute;
-        top: 5%;
-        left: 32%;
+        // position: absolute;
+        // top: 5%;
+        // left: 32%;
         background-color:rgba(0, 0, 0, 0.3);
         filter: alpha(opacity=50)
 
@@ -28,7 +28,7 @@ input {
       font-style: italic;
       align-items: center;
       position: relative;
-      left: 9%;
+      // left: 9%;
 
 }
 .new_user {
@@ -39,13 +39,13 @@ input {
 .delete_account{
   text-decoration: none;
     color: black;
-    position: absolute;
-    right: 16%;
+    // position: absolute;
+    // right: 16%;
     font-family: sans-serif;
 }
 .welcome_msg {
-  position: absolute;
-  left: 45%;
-  top: 2%;
+  // position: absolute;
+  // left: 45%;
+  // top: 2%;
   font-family: Lobster;
 }

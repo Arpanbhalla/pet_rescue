@@ -7,7 +7,7 @@ class SessionController < ApplicationController
 
     if user.present? && user.authenticate( params[:password] )
       # flash[:success] = "#{@current_user}User successfully logged in"
-      session[:user_first_name] = user.id
+      session[:user_id] = user.id
       redirect_to animals_path()
     else
       flash[:error] = "Your password or email is incorrect"
