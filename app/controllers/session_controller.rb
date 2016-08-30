@@ -8,7 +8,7 @@ class SessionController < ApplicationController
     if user.present? && user.authenticate( params[:password] )
       # flash[:success] = "#{@current_user}User successfully logged in"
       session[:user_id] = user.id
-      redirect_to users_path
+      redirect_to user_path(user)
     else
       flash[:error] = "Your password or email is incorrect"
       redirect_to login_path
@@ -18,6 +18,6 @@ class SessionController < ApplicationController
   def destroy
     session[:user_id] = nil
     flash[:success] = "You successfully logged out"
-    redirect_to users_path
+    redirect_to root_path
   end
 end

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authorise, :only => [:index, :edit]
+  before_action :authorise, :except => [:new, :create]
 
   # def index
   #   @users = User.all
@@ -17,7 +17,8 @@ class UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       flash[:success] = "User was successfully created"
-      redirect_to users_path
+      session[:user_id] = @user.id
+      redirect_to user_path(@user)
     else
       flash[:error] = "The lens cap is on"
       render :new

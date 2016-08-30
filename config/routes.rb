@@ -12,25 +12,9 @@
 #
 
 Rails.application.routes.draw do
-  get 'animals/index'
-
-  get 'animals/edit'
-
-  get 'animals/new'
-
-  get 'animals/show'
-
-  get 'sellers/index'
-
-  get 'sellers/edit'
-
-  get 'sellers/show'
-
-  get 'sellers/new'
-
-  root "session#new"
+  root "users#show"
   get "/users/edit" => 'users#edit', :as => "edit_user"
-  resources :users, :except => [:edit]
+  resources :users, :except => [:edit, :index]
 
   get '/login' => 'session#new', :as => "login"
   post '/login' => 'session#create'
