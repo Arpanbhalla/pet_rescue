@@ -1,7 +1,7 @@
 class AnimalsController < ApplicationController
 
         before_action :authorise
-        
+
         def index
           @animals = Animal.all
         end
@@ -27,6 +27,7 @@ class AnimalsController < ApplicationController
 
         def show
           @animal = Animal.find params[:id]
+          @comment = Comment.new
         end
 
         def destroy

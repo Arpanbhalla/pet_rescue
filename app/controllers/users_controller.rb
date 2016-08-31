@@ -48,8 +48,5 @@ class UsersController < ApplicationController
       params.require(:user).permit(:first_name,:last_name,:email, :password, :password_confirmation, :image,:address,:mobile)
     end
 
-    def authorise
-      # flash[:error] = "You need to be logged in to see that" unless @current_user.present?
-      redirect_to login_path unless @current_user.present?
-    end
+
 end

@@ -17,5 +17,7 @@
 
 class User < ActiveRecord::Base
     has_many :animals
+    has_many :comments
+
     has_secure_password
 end
