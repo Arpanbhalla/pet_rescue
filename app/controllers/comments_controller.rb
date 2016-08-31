@@ -1,4 +1,7 @@
 class CommentsController < ApplicationController
+
+
+
   def create
     @animal = Animal.find params[:animal_id]
     comment= Comment.create(comment_params)

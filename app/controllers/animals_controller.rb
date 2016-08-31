@@ -29,7 +29,7 @@ class AnimalsController < ApplicationController
           @animal = Animal.find params[:id]
           @comment = Comment.new
         end
-
+        
         def destroy
         animal = Animal.find params[:id]
         animal.destroy
