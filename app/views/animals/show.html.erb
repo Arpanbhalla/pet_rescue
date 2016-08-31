@@ -15,7 +15,11 @@
   <p>Owner: <%= link_to(@animal.user.first_name, @animal.user) %></p>
 <% end %>
 <hr>
-<%= image_tag(@animal.images, :class => 'animal_display_image') %>
+
+  <% @animal.image.each do |i| %>
+<%= cl_image_tag(i, :class => 'animal_display_image')%>
+  <% end %>
+
 
 
 
@@ -28,7 +32,7 @@
 
     <span>Settings</span>
     <div class="dropdown-content">
-      <p><%= link_to "Sell New Animal", new_animal_path(@animal) %> </p>
+      <p><%= link_to "Sell New Animal", new_animal_path %> </p>
       <p><%= link_to "Edit Animal", edit_animal_path(@animal) %> </p>
       <p><%= link_to "Delete Animal", @animal, :method => :delete, :data => { :confirm => "Are you       sure?" } %> </p>
     </div>

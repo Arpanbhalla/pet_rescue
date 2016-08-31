@@ -10,8 +10,14 @@ class AnimalsController < ApplicationController
           @animal = Animal.new
         end
         def create
-          animal = Animal.create animal_params
-          redirect_to animal # redirect_to "/works/#{work.id}"
+          # This is the magic stuff that will let us upload an image to Cloudinary when creating a new animal.
+          animal = Animal.new(animal_params)
+          params[:animal][:image].each do |photo|
+            req = Cloudinary::Uploader.upload(photo)
+            animal.image << req["url"]
+          end
+          animal.save
+          redirect_to animal
         end
 
         def edit
@@ -29,7 +35,7 @@ class AnimalsController < ApplicationController
           @animal = Animal.find params[:id]
           @comment = Comment.new
         end
-        
+
         def destroy
         animal = Animal.find params[:id]
         animal.destroy
@@ -38,6 +44,6 @@ class AnimalsController < ApplicationController
 
         private
         def animal_params
-          params.require(:animal).permit(:species,:breed,:sex,:images,:dob,:description,:price,:user_id)
+          params.require(:animal).permit(:species, :breed, :sex, :dob, :description, :price, :user_id)
         end
 end
