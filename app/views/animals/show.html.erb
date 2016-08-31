@@ -1,4 +1,4 @@
-<h2 class="heading"><%= @animal.species %></h2>
+<!-- <h2 class="heading"><%= @animal.species %></h2> -->
 
 
 <p>Breed: <%= @animal.breed %></p>
@@ -24,20 +24,10 @@
 
 
 <div class="controls">
-
+  <div class= "all_animals" > <%= link_to "All animals", animals_path %></div>
 </div>
-<nav>
-    <div class= "all_animals" > <%= link_to "All animals", animals_path %></div>
-    <div class="dropdown">
 
-    <span>Settings</span>
-    <div class="dropdown-content">
-      <p><%= link_to "Sell New Animal", new_animal_path %> </p>
-      <p><%= link_to "Edit Animal", edit_animal_path(@animal) %> </p>
-      <p><%= link_to "Delete Animal", @animal, :method => :delete, :data => { :confirm => "Are you       sure?" } %> </p>
-    </div>
-    </div>
-</nav>
+
 <hr>
 <h3>Comments</h3>
 

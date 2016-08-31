@@ -52,8 +52,14 @@
   // position: absolute;
   // right: 2%;
 }
-.navigation_box {
-  height: 10%;
+nav {
+  position: fixed;
+  background: white;
+  top: 0;
+  left: 0;
   width: 100%;
-  background-color: blue;
+  height: 80px;
+  text-align: right;
+  line-height: 80px;
+  display: inline-grid;
 }

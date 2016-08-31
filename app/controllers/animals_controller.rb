@@ -32,7 +32,7 @@ class AnimalsController < ApplicationController
 
 
         def show
-          @animal = Animal.find params[:id]
+          @animal = Animal.find_by_id(params[:id])
           @comment = Comment.new
         end
 
