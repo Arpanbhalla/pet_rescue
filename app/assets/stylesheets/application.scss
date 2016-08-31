@@ -18,13 +18,18 @@
 
 .scroller {
  div {
-   text-align: center;
-   font-size: 30px;
+  width: 50%;
+  position: relative;
+  left: 20%;
+  top: 10px;
+  z-index: 999;
+  opacity: 1;
+  // border:5px solid #DCECF5;
+  // border-radius: 10px;
  }
 }
-
 .slick-prev::before, .slick-next::before {
- color: #000;
+ color: green;
 }
 
 .slick-next {
@@ -82,4 +87,8 @@ nav {
   text-align: right;
   line-height: 80px;
   display: inline-grid;
+}
+
+img {
+  width:30%;
 }
