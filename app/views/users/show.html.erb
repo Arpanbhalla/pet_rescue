@@ -3,5 +3,6 @@
 
 <div class ="welcome_msg"><h2><%= "Welcome #{@current_user.first_name} "%></h2></div>
 
-<p><%= @current_user.last_name %></p>
-<p><%= @current_user.email %></p>
+<p><%= @current_user.first_name %> <%= @current_user.last_name %></p>
+<p><%= @current_user.mobile %></p>
+<p><%= @current_user.address%></p>

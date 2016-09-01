@@ -17,6 +17,7 @@ class AnimalsController < ApplicationController
             animal.image << req["url"]
           end
           animal.save
+          @current_user.animals << animal
           redirect_to animal
         end
 
@@ -33,7 +34,7 @@ class AnimalsController < ApplicationController
 
         def show
           @animal = Animal.find(params[:id])
-          
+
           @comment = Comment.new
         end
 

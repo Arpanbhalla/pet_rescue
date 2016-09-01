@@ -5,11 +5,10 @@
     <span>My petsale</span>
     <div class="dropdown-content">
       <p><%= link_to "Edit Animal", edit_animal_path(@animal.id) %> </p>
-      <p><%= link_to "Delete Animal", @animal, :method => :delete, :data => { :confirm => "Are you       sure?" } %> </p>
+      <p><%= link_to "Delete Animal", @animal, :method => :delete, :data => { :confirm => "Are you sure?" } %> </p>
     </div>
     </div>
   <% end %>
-
 </nav>
 
 <p>Breed: <%= @animal.breed %></p>
@@ -22,9 +21,20 @@
 
 <p>Price: <%= @animal.price %></p>
 
-<% if @animal.user %>
-  <p>Owner: <%= link_to(@animal.user.first_name, @animal.user) %></p>
+<% if @current_user == @animal.user %>
+  <p>My Ad : <%= link_to(@animal.user.first_name, @animal.user) %></p>
+<% elsif @animal.user %>
+  <p>Contact Seller : <%= link_to(@animal.user.first_name, @animal.user) %></p>
 <% end %>
+
+<div class="controls">
+  <div class= "all_animals" > <%= link_to "All animals", animals_path %></div>
+</div>
+
+
+
+
+
 <hr>
 
 <div class="scroller">
@@ -36,9 +46,7 @@
 
 
 
-<div class="controls">
-  <div class= "all_animals" > <%= link_to "All animals", animals_path %></div>
-</div>
+
 
 
 <hr>
