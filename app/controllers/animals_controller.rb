@@ -32,14 +32,15 @@ class AnimalsController < ApplicationController
 
 
         def show
-          @animal = Animal.find_by_id(params[:id])
+          @animal = Animal.find(params[:id])
+          
           @comment = Comment.new
         end
 
         def destroy
         animal = Animal.find params[:id]
         animal.destroy
-        redirect_to animal_path
+        redirect_to animals_path
         end
 
         private
