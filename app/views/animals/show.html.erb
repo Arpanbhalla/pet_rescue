@@ -1,14 +1,16 @@
 <!-- <h2 class="heading"><%#= @animal.species %></h2> -->
 <nav>
+  <%= link_to "All animals", animals_path, :class => "all_animals"%>
   <% if @current_user == @animal.user %>
-    <div class="dropdown">
-    <span>My petsale</span>
+  <li class="dropdown">
+    <a href="#" class="dropbtn">My Petsale</a>
     <div class="dropdown-content">
-      <p><%= link_to "Edit Animal", edit_animal_path(@animal.id) %> </p>
-      <p><%= link_to "Delete Animal", @animal, :method => :delete, :data => { :confirm => "Are you sure?" } %> </p>
+      <a href="a"></a><%= link_to "Edit Animal", edit_animal_path(@animal.id) %></a>
+      <a href="#"></a><%= link_to "Delete Animal", @animal, :method => :delete, :data => { :confirm => "Are you sure?" } %></a>
     </div>
-    </div>
+  </li>
   <% end %>
+
 </nav>
 
 <p>Breed: <%= @animal.breed %></p>
@@ -26,14 +28,6 @@
 <% elsif @animal.user %>
   <p>Contact Seller : <%= link_to(@animal.user.first_name, @animal.user) %></p>
 <% end %>
-
-<div class="controls">
-  <div class= "all_animals" > <%= link_to "All animals", animals_path %></div>
-</div>
-
-
-
-
 
 <hr>
 
