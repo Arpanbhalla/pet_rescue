@@ -1,8 +1,7 @@
 <nav><%= link_to "All animals", animals_path %></nav>
 
 
-<div class ="welcome_msg"><h2><%= "Welcome #{@current_user.first_name} "%></h2></div>
-
-<p><%= @current_user.first_name %> <%= @current_user.last_name %></p>
-<p><%= @current_user.mobile %></p>
-<p><%= @current_user.address%></p>
+<h3>Contact Details :</h3>
+<p><%= @user.first_name %> <%= @user.last_name %></p>
+<p><%= @user.mobile %></p>
+<p><%= @user.address%></p>

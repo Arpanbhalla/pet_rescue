@@ -2,8 +2,12 @@
 <div class='animal_image'>
 
 <% @animals.each do |w| %>
-  <p>
-    <%= link_to(cl_image_tag(w.image[0], :class => "thumbnail"), animal_path(w)) %>
+  <p class "thumbnail">
+    <%if w.image.present?%>
+      <%= link_to(cl_image_tag(w.image[0]), animal_path(w)) %>
+    <%else%>
+        Image not available
+    <%end%>
   </p>
 <% end %>
 </div>

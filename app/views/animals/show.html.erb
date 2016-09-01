@@ -1,5 +1,5 @@
 <!-- <h2 class="heading"><%#= @animal.species %></h2> -->
-<nav>
+<nav class="navigation-left">
   <%= link_to "All animals", animals_path, :class => "all_animals"%>
   <% if @current_user == @animal.user %>
   <li class="dropdown">
@@ -33,7 +33,7 @@
 
 <div class="scroller">
   <% @animal.image.each do |i| %>
-<%= cl_image_tag(i, :class => 'animal_display_image')%>
+    <%= cl_image_tag(i, :class => 'animal_display_image')%>
   <% end %>
 </div>
 
@@ -48,5 +48,6 @@
     </ul>
 <% end %>
 <!-- Edit or delete a comment -->
+<br>
 <h3>Add a comment below:</h3>
 <%= render 'comments/form' %>

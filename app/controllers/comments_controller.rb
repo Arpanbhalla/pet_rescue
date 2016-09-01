@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
     redirect_to animals_path
   end
 
-  end
+
 
   private
      def comment_params

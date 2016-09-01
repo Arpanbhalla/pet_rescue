@@ -101,12 +101,19 @@ nav {
   text-align: right;
   line-height: 80px;
   display: inline-grid;
+  z-index: 1000;
+  background-color: white;
+}
+
+.navigation-left {
+  width: 20%;
 }
 
 img {
   width:30%;
   border:2px solid black;
 }
+
 .btn_logout, .post_new_pet {
      border-top: 1px solid #65a9d7;
      background: #65a9d7;
@@ -134,6 +141,7 @@ img {
      background: #307bad;
      color: #ccc;
      }
+
 
 
 
