@@ -22,14 +22,14 @@
     <%= f.email_field :email, :required => true , :placeholder => "Email"%>
   </p>
   <p>
-    <%= f.text_field :first_name, :required => true, :placeholder => "First Name" %>
+    <%= f.text_field :first_name, :required => true, :placeholder => "First Name", :class => "first_name" %>
   </p>
   <p>
-    <%= f.text_field :last_name, :required => true , :placeholder => "Last Name"%>
+    <%= f.text_field :last_name, :required => true , :placeholder => "Last Name", :class => "last_name"%>
   </p>
-  <p>
-    <%= f.url_field :password, :required => false , :placeholder => "Enter profile picture"%>
-  </p>
+  <!-- <p>
+    <%#= f.url_field :password, :required => false , :placeholder => "Enter profile picture"%>
+  </p> -->
   <p>
     <%= f.text_field :address, :required => true, :placeholder => "Postal Address" %>
   </p>

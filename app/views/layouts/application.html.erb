@@ -19,10 +19,10 @@
   <nav class = "navigtion_landing_page">
 
     <% unless @current_user.present? %>
-      <%= link_to( "Login", login_path(), :class => 'btn_login' ) %>
+      <!-- <%#= link_to( "Login", login_path(), :class => 'btn_login' ) %> -->
       <%= link_to( "Sign up", new_user_path(), :class =>"btn_signup" ) %>
     <% else %>
-      <%= link_to( "Log out", logout_path(), :method => :delete) %>
+      <%= link_to( "Log out", logout_path(), :method => :delete, :class => "btn_logout") %>
       <p><%= link_to "Post a pet", new_animal_path %> </p>
       <p>
       Logged in as: <%=  @current_user.first_name %>

@@ -15,8 +15,8 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    animal = Animal.find params[:id]
-    animal.destroy
+    comments = Comment.find params[:id]
+    comment.destroy
     redirect_to animals_path
   end
 

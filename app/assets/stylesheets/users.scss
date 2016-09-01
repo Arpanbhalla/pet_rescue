@@ -8,21 +8,20 @@
 }
 
 .sign_up {
-        color: #bbbbbb;
-        width: 40%;
-        height: 90%;
-        border: solid;
-        border-radius: 3%;
-        // position: absolute;
-        // top: 5%;
-        // left: 32%;
-        background-color:rgba(0, 0, 0, 0.3);
-        filter: alpha(opacity=50)
-
+      color: #bbbbbb;
+      width: 50%;
+      padding: 2% 2% 2% 2%;
+      border: solid;
+      border-radius: 1%;
+      position: absolute;
+      top: 30%;
+      left: 25%;
+      background-color:rgba(0, 0, 0, 0.3);
+      filter: alpha(opacity=50)
 }
 
 input {
-      width: 70%;
+      width: 98%;
       height: 35px;
       border: solid .1px black;
       font-style: italic;
