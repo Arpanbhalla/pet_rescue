@@ -3,6 +3,6 @@
  <p><%= comment.body %> </p>
  <p>User: <%= link_to( comment.user.first_name, "/users/#{comment.user.id}" ) %>
  Created: <%= time_ago_in_words(comment.created_at) %> ago.</p>
-<!-- If comment.user.id == @current_user.id <p>
- <#%= link_to 'Destroy Comment', ([@question, @comment]), method: :delete, data: { confirm: 'Are you sure?'} %>
-</p> -->
+<%= if comment.user.id == @current_user.id %> <p>
+ <%= link_to 'Destroy Comment', ([@question, @comment]), method: :delete, data: { confirm: 'Are you sure?'} %>
+</p>

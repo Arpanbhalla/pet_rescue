@@ -44,17 +44,13 @@
 </div>
 
 
-
-
-
-
-
 <hr>
 <h3>Comments</h3>
 
 <% @animal.comments.order("created_at ASC").each do |c| %>
     <ul>
-      <li><%= c.body %><br></li>
+      <li><%= c.user.first_name if c.user %> Says :<%= c.body %><br></li>
+
     </ul>
 <% end %>
 <!-- Edit or delete a comment -->
