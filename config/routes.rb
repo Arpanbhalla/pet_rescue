@@ -18,8 +18,8 @@ Rails.application.routes.draw do
 
   resources :users, :animals
 
-  resources :animals do
-    resources :comments
+      resources :animals do
+      resources :comments
   end
 
   get '/login' => 'session#new', :as => "login"
