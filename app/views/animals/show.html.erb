@@ -32,7 +32,7 @@
 <hr>
 
 <div class="scroller">
-  <% @animal.image.each do |i| %>
+  <% @animal.images.each do |i| %>
     <%= cl_image_tag(i, :class => 'animal_display_image')%>
   <% end %>
 </div>

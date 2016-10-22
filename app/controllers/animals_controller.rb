@@ -14,7 +14,7 @@ class AnimalsController < ApplicationController
           animal = Animal.new(animal_params)
           params[:animal][:image].each do |photo|
             req = Cloudinary::Uploader.upload(photo)
-            animal.image << req["url"]
+            animal.images << req["url"]
           end
           animal.save
           @current_user.animals << animal

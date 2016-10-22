@@ -3,8 +3,8 @@
 
 <% @animals.each do |w| %>
   <p class "thumbnail">
-    <%if w.image.present?%>
-      <%= link_to(cl_image_tag(w.image[0]), animal_path(w)) %>
+    <%if w.images.present?%>
+      <%= link_to(cl_image_tag(w.images[0]), animal_path(w)) %>
     <%else%>
         Image not available
     <%end%>

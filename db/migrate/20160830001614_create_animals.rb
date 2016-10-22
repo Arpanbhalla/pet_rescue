@@ -5,11 +5,11 @@ class CreateAnimals < ActiveRecord::Migration
         t.text :species
         t.text :breed
         t.text :sex
-        t.text :images
         t.text :dob
         t.text :description
         t.text :price
         t.integer :user_id
+        t.text :image
 
       t.timestamps null: false
     end
