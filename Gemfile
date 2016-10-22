@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 
 
-gem 'cloudinary'
-gem 'bootstrap', '~> 4.0.0.alpha3.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use pg as the database for Active Record
@@ -44,6 +42,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'annotate'
   gem 'cloudinary'
+  gem 'dropzonejs-rails'
 end
 
 group :production do

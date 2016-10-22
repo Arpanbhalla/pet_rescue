@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require dropzone
 //= require jquery.slick
 //= require initialize
 //= require_tree .

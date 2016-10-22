@@ -1,9 +1,55 @@
 <!-- <h4>Add New animal to sell</h4> -->
 
 <%= form_for(@animal, :html => {:multipart => true}) do |f| %>
+
   <p>
-    <%= f.text_field :species, :required => true, :placeholder => "Species Type" %>
+    <%= f.select :species, ['Bearded Dragon',
+'Birds',
+'Burro',
+'Cats',
+'Chameleons (Veiled)',
+'Chickens',
+'Chinchillas',
+'Chinese Water Dragon',
+'Cows',
+'Dogs',
+'Donkey',
+'Ducks',
+'Ferrets',
+'Fish',
+'Geckos',
+'Geese (Chinese Swan Goose)',
+'Gerbils',
+'Goats',
+'Guinea' 'Fowl',
+'Guinea Pigs',
+'Hamsters',
+'Horses',
+'Iguanas',
+'Llamas',
+'Lizards',
+'Mice',
+'Mule',
+'Peafowl',
+'Pigs and Hogs',
+'Pigeons',
+'Ponies',
+'Pot Bellied Pig',
+'Rabbits',
+'Rats',
+'Sheep',
+'Skinks',
+'Snakes',
+'Stick Insects',
+'Sugar Gliders',
+'Tarantula',
+'Turkeys',
+'Turtles'
+], :prompt => 'Select Animal Species' ,:required => true %>
   </p>
+  <!-- <p>
+    <%#= f.select : [ 'Box', 'Cover', 'Poster' ], :prompt => 'Select One' :required => true %>
+  </p> -->
   <p>
     <%= f.text_field :breed, :required => true ,:placeholder => "Breed"%>
   </p>

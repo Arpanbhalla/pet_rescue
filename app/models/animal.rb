@@ -6,13 +6,13 @@
 #  species     :text
 #  breed       :text
 #  sex         :text
-#  images      :text
 #  dob         :text
 #  description :text
 #  price       :text
 #  user_id     :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  images      :text             default([]), is an Array
 #
 
 class Animal < ActiveRecord::Base
