@@ -5,3 +5,25 @@
 <p><%= @user.first_name %> <%= @user.last_name %></p>
 <p><%= @user.mobile %></p>
 <p><%= @user.address%></p>
+
+
+<%= content_tag :div, class: "lat", data: {lat: @user.latitude} do %>
+<%end%>
+<%= content_tag :div, class: "lng", data: {lng: @user.longitude} do %>
+<%end%>
+
+<p id="lat_id"><%= @user.latitude %></p>
+
+<p id="lng_id"><%= @user.longitude %></p>
+
+<div id="map"></div>
+
+<%=image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@user.latitude}%2C#{@user.longitude}" %>
+
+<h3>Nearby Animals for sale</h3>
+    <ul>
+      <% for user in @user.nearbys(10) %>
+
+          <%= user.address%> (<%= user.distance.round(2) %> miles)</li>
+      <% end %>
+    </ul>

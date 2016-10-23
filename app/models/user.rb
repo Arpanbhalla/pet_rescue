@@ -16,8 +16,12 @@
 #
 
 class User < ActiveRecord::Base
+    geocoded_by :address
+    after_validation :geocode, :if => :address_changed?
+
     has_many :animals
     has_many :comments
-
     has_secure_password
+    # geocoder
+
 end

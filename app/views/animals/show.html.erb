@@ -43,7 +43,7 @@
 
 <% @animal.comments.order("created_at ASC").each do |c| %>
     <ul>
-      <li><%= c.user.first_name if c.user %> Says :<%= c.body %><br></li>
+      <li><%= c.user.first_name if c.user %> Says :<%= c.body %></li> <br>
 
     </ul>
 <% end %>

@@ -42,7 +42,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'annotate'
   gem 'cloudinary'
-  gem 'dropzonejs-rails'
+  gem 'geocoder'
 end
 
 group :production do

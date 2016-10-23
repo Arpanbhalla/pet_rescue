@@ -20,9 +20,13 @@
     <% unless @current_user.present? %>
       <%= link_to( "Sign up", new_user_path(), :class =>"btn_signup" ) %>
     <% else %>
-      <div class = "heading">Welcome <%=  @current_user.first_name %></div>
+      <div>Welcome <%=  @current_user.first_name %></div>
       <%= link_to( "Log out", logout_path(), :method => :delete, :class => "btn_logout") %>
       <%= link_to "Post a pet", new_animal_path, :class =>"post_new_pet"%>
+      <%= link_to "Edit your Profile", edit_user_path(@current_user.id) %>
+      <%= link_to "Delete Account", user_path( @current_user.id ), :method => :delete, :class => "delete_account" , :data => { :confirm => "Are you sure?" }%>
+      <%= link_to "All Animal", animals_path %>
+
     <% end %>
   </nav>
 

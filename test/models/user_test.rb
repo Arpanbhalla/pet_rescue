@@ -13,6 +13,8 @@
 #  password_digest :text
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  longitude       :float
+#  latitude        :float
 #
 
 require 'test_helper'
