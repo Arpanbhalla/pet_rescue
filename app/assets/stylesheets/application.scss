@@ -1,165 +1,165 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-@import 'slick';
-@import 'slick-theme';
-
-.scroller {
- div {
-   text-align: center;
-   height: 300px;
-   width: 300px;
-   object-fit: none;
-   overflow: hidden;
-   align-items: center;
-   background-position: 50% 50%;
-   background-repeat:   no-repeat;
-   background-size:     cover;
-    z-index: 999;
-  opacity: 1;
-  border:5px solid #DCECF5;
-  border-radius: 10px;
-  display: block;
-margin-left: auto;
-margin-right: auto;
- }
-}
-.slick-prev::before, .slick-next::before {
- color: green;
-}
-
-.slick-next {
- right: -5px;
-}
-
-.slick-prev {
- left: -5px;
-}
-
-.btn_signup {
-  text-decoration: none;
-  color: black;
-  font-family: sans-serif;
-  background: #3498db;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-  background-image: -o-linear-gradient(top, #3498db, #2980b9);
-  background-image: linear-gradient(to bottom, #3498db, #2980b9);
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
-  border-radius: 28px;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 20px;
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
-  margin-right: 1.5%;
-}
-.btn_signup:hover {
-  background: #3cb0fd;
-  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
-  text-decoration: none;
-}
-.session.new, .users.new{
-  background-image: image_url('back5.jpg');
-  background-size: cover;
-}
-
-.edit_profile {
-  text-decoration: none;
-  color: black;
-  font-family: sans-serif;
-  // position: absolute;
-  // right: 8%;
-}
-
-.log_out {
-  text-decoration: none;
-  color: black;
-  font-family: sans-serif;
-  margin:10px;
-  // position: absolute;
-  // right: 2%;
-}
-nav {
-  position: fixed;
-  // background: white;
-  border-bottom: 1px solid black;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  text-align: right;
-  line-height: 80px;
-  display: inline-grid;
-  z-index: 1000;
-  background-color: white;
-}
-
-.navigation-left {
-  width: 20%;
-}
-
-img {
-  width:30%;
-  border:2px solid black;
-}
-
-.btn_logout, .post_new_pet {
-     border-top: 1px solid #65a9d7;
-     background: #65a9d7;
-     background: -webkit-gradient(linear, left top, left bottom, from(#65a9d7), to(#65a9d7));
-     background: -webkit-linear-gradient(top, #65a9d7, #65a9d7);
-     background: -moz-linear-gradient(top, #65a9d7, #65a9d7);
-     background: -ms-linear-gradient(top, #65a9d7, #65a9d7);
-     background: -o-linear-gradient(top, #65a9d7, #65a9d7);
-     padding: 14.5px 29px;
-     -webkit-border-radius: 12px;
-     -moz-border-radius: 12px;
-     border-radius: 12px;
-     -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-     -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-     box-shadow: rgba(0,0,0,1) 0 1px 0;
-     text-shadow: rgba(0,0,0,.4) 0 1px 0;
-     color: white;
-     font-size: 18px;
-     font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
-     text-decoration: none;
-     vertical-align: middle;
-     }
-  .btn_logout,.post_new_pet:hover {
-     border-top-color: #307bad;
-     background: #307bad;
-     color: #ccc;
-     }
-
-
-
-
-// .post_new_pet {
+// /*
+//  * This is a manifest file that'll be compiled into application.css, which will include all the files
+//  * listed below.
+//  *
+//  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+//  * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+//  *
+//  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+//  * compiled file so the styles you add here take precedence over styles defined in any styles
+//  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+//  * file per style scope.
+//  *
+//  *= require_tree .
+//  *= require_self
+//  */
+// @import 'slick';
+// @import 'slick-theme';
+//
+// .scroller {
+//  div {
+//    text-align: center;
+//    height: 300px;
+//    width: 300px;
+//    object-fit: none;
+//    overflow: hidden;
+//    align-items: center;
+//    background-position: 50% 50%;
+//    background-repeat:   no-repeat;
+//    background-size:     cover;
+//     z-index: 999;
+//   opacity: 1;
+//   border:5px solid #DCECF5;
+//   border-radius: 10px;
+//   display: block;
+// margin-left: auto;
+// margin-right: auto;
+//  }
+// }
+// .slick-prev::before, .slick-next::before {
+//  color: green;
+// }
+//
+// .slick-next {
+//  right: -5px;
+// }
+//
+// .slick-prev {
+//  left: -5px;
+// }
+//
+// .btn_signup {
 //   text-decoration: none;
 //   color: black;
 //   font-family: sans-serif;
-//   color: black;
-//   // position: absolute;
-//   // top: -1px;
-//   // right: 75px;
-//   // font-size: 18px;
+//   background: #3498db;
+//   background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+//   background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+//   background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+//   background-image: -o-linear-gradient(top, #3498db, #2980b9);
+//   background-image: linear-gradient(to bottom, #3498db, #2980b9);
+//   -webkit-border-radius: 28;
+//   -moz-border-radius: 28;
+//   border-radius: 28px;
+//   font-family: Arial;
+//   color: #ffffff;
+//   font-size: 20px;
+//   padding: 10px 20px 10px 20px;
+//   text-decoration: none;
+//   margin-right: 1.5%;
 // }
+// .btn_signup:hover {
+//   background: #3cb0fd;
+//   background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+//   background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+//   background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+//   background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+//   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+//   text-decoration: none;
+// }
+// .session.new, .users.new{
+//   background-image: image_url('back5.jpg');
+//   background-size: cover;
+// }
+//
+// .edit_profile {
+//   text-decoration: none;
+//   color: black;
+//   font-family: sans-serif;
+//   // position: absolute;
+//   // right: 8%;
+// }
+//
+// .log_out {
+//   text-decoration: none;
+//   color: black;
+//   font-family: sans-serif;
+//   margin:10px;
+//   // position: absolute;
+//   // right: 2%;
+// }
+// // nav {
+// //   position: fixed;
+// //   // background: white;
+// //   border-bottom: 1px solid black;
+// //   top: 0;
+// //   left: 0;
+// //   width: 100%;
+// //   height: 80px;
+// //   text-align: right;
+// //   line-height: 80px;
+// //   display: inline-grid;
+// //   z-index: 1000;
+// //   background-color: white;
+// // }
+//
+// .navigation-left {
+//   width: 20%;
+// }
+//
+// img {
+//   width:30%;
+//   // border:2px solid black;
+// }
+//
+// .btn_logout, .post_new_pet {
+//      border-top: 1px solid #65a9d7;
+//      background: #65a9d7;
+//      background: -webkit-gradient(linear, left top, left bottom, from(#65a9d7), to(#65a9d7));
+//      background: -webkit-linear-gradient(top, #65a9d7, #65a9d7);
+//      background: -moz-linear-gradient(top, #65a9d7, #65a9d7);
+//      background: -ms-linear-gradient(top, #65a9d7, #65a9d7);
+//      background: -o-linear-gradient(top, #65a9d7, #65a9d7);
+//      padding: 14.5px 29px;
+//      -webkit-border-radius: 12px;
+//      -moz-border-radius: 12px;
+//      border-radius: 12px;
+//      -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+//      -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+//      box-shadow: rgba(0,0,0,1) 0 1px 0;
+//      text-shadow: rgba(0,0,0,.4) 0 1px 0;
+//      color: white;
+//      font-size: 18px;
+//      font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+//      text-decoration: none;
+//      vertical-align: middle;
+//      }
+//   .btn_logout,.post_new_pet:hover {
+//      border-top-color: #307bad;
+//      background: #307bad;
+//      color: #ccc;
+//      }
+//
+//
+//
+//
+// // .post_new_pet {
+// //   text-decoration: none;
+// //   color: black;
+// //   font-family: sans-serif;
+// //   color: black;
+// //   // position: absolute;
+// //   // top: -1px;
+// //   // right: 75px;
+// //   // font-size: 18px;
+// // }
