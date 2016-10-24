@@ -1,22 +1,8 @@
 
 <!-- Replace the value of the key parameter with your own API key. -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-Jcwb5bQHf6lfuntM3n8rRamkTu5Gdjw&callback=initMap" async defer></script>
 <nav><%= link_to "All animals", animals_path %></nav>
 
 
 <h3>Contact Details :</h3>
 <p><%= @user.first_name %> <%= @user.last_name %></p>
 <p><%= @user.mobile %></p>
-<p><%= @user.address%></p>
-
-
-<%= content_tag :div, class: "lat", data: {lat: @user.latitude} do %>
-<%end%>
-<%= content_tag :div, class: "lng", data: {lng: @user.longitude} do %>
-<%end%>
-
-<p id="lat_id"><%= @user.latitude %></p>
-
-<p id="lng_id"><%= @user.longitude %></p>
-
-<div id="map"></div>

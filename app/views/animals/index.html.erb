@@ -2,15 +2,20 @@
 
 <%= form_tag(animals_path, :method => "get", id: "search-form") do %>
 <%= text_field_tag :search, params[:search], placeholder: "Search Species" %>
-<%= submit_tag "Search" %>
 
-<%= form_tag users_path, :method => :get do %>
-    <%= text_field_tag :search, params[:search], :placeholder => "Enter Address"  %>
-    <%= number_field_tag :distance, params[:distance], :placeholder => "Distance"  %>
-    <%= submit_tag "Search Near", :name => nil %>
-<% end %>
+<!-- geocoder -->
+    <p class ="text_field_tag">
+      <%= text_field_tag :area, params[:area], :placeholder => "Search near..."  %>
+      </p>
+      <p class ="number_field_tag">
+      <%= number_field_tag :distance, params[:distance], :placeholder => "Distance"  %>
+      </p>
+      <p class ="search_by_location">
+      <%= submit_tag "Search Near", :name => nil %>
+      </p>
+  <% end %>
+  <!-- geocoder -->
 
-<% end %>
 
 <div class='animal_image'>
 <% @animals.each do |w| %>

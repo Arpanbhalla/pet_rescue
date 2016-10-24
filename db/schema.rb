@@ -23,6 +23,9 @@ ActiveRecord::Schema.define(version: 20161022022158) do
     t.text     "dob"
     t.text     "description"
     t.text     "price"
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
     t.integer  "user_id"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
@@ -43,9 +46,6 @@ ActiveRecord::Schema.define(version: 20161022022158) do
     t.string   "last_name"
     t.text     "mobile"
     t.text     "image"
-    t.string   "address"
-    t.float    "latitude"
-    t.float    "longitude"
     t.boolean  "admin",           default: false
     t.text     "password_digest"
     t.datetime "created_at",                      null: false

@@ -5,8 +5,7 @@ u1 = User.create ({
 :email => "arpanbhalla@gmail.com",
 :password => "chicken",
 :password_confirmation => "chicken",
-:mobile => "0435479576",
-:address => "50 Motilal nehru Nagar Bhilai"
+:mobile => "0435479576"
 })
 
 u2 = User.create ({
@@ -15,8 +14,7 @@ u2 = User.create ({
 :email => "andrewk@gmail.com",
 :password => "chicken",
 :password_confirmation => "chicken",
-:mobile => "0435470576",
-:address => "General Assembly, Sydney 2000"
+:mobile => "0435470576"
 })
 p "User count: #{User.count}"
 
@@ -30,7 +28,9 @@ a1 = Animal.create ({
   :images => ['http://res.cloudinary.com/dbgvixfy4/image/upload/v1477180184/pgy4zfjqpbz6gnaxaeml.jpg','http://res.cloudinary.com/dbgvixfy4/image/upload/v1477180161/h90b2zfgid6neniwwmcv.jpg'],
   :description => "large size, long broad body, solid and firm condition, broad head, erect ears and bold eyes. Coat: 1.9 to 2.54cms (¾ to 1 inch) in length, thick and very dense, medium texture (not harsh or soft).Colour: in OZ - brown grey (agouti) & opal – overseas white, dark steel grey & blue. Minimum Adult weight: bucks 5.670 kgs (12 ½ lbs). Does 6.123 kgs (13 ½ lbs).
 ",
-  :price => "$300.00"
+  :price => "$300.00",
+  :address => "50 Motilal nehru Nagar Bhilai"
+
   })
 
   a2 = Animal.create ({
@@ -41,7 +41,9 @@ a1 = Animal.create ({
     :images => ['http://res.cloudinary.com/dbgvixfy4/image/upload/v1477130238/qvb6krp39obtcslhbkgl.jpg','http://res.cloudinary.com/dbgvixfy4/image/upload/v1477130231/mtbprkze4tkzmamgjgba.jpg'],
     :description => "Labrador Retriever
     The Labrador Retriever was bred to be both a friendly companion and a useful working dog breed.Good with small Kids",
-    :price => "$100.00"
+    :price => "$100.00",
+    :address => "General Assembly, Sydney 2000"
+
     })
 
 p  "Total animals :#{Animal.count}"

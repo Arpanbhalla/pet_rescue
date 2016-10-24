@@ -1,4 +1,6 @@
 <!-- <h2 class="heading"><%#= @animal.species %></h2> -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-Jcwb5bQHf6lfuntM3n8rRamkTu5Gdjw&callback=initMap" async defer></script>
+
 <nav class="navigation-left">
   <%= link_to "All animals", animals_path, :class => "all_animals"%>
   <% if @current_user == @animal.user %>
@@ -23,12 +25,26 @@
 <p>Description: <%= @animal.description %></p>
 
 <p>Price: <%= @animal.price %></p>
+<p>Location : <%= @animal.address %></p>
+
 
 <% if @current_user == @animal.user %>
   <p>My Ad : <%= link_to(@animal.user.first_name, @animal.user) %></p>
 <% elsif @animal.user %>
   <p>Contact Seller : <%= link_to(@animal.user.first_name, @animal.user) %></p>
 <% end %>
+
+<%= content_tag :div, class: "lat", data: {lat: @animal.latitude} do %>
+<%end%>
+<%= content_tag :div, class: "lng", data: {lng: @animal.longitude} do %>
+<%end%>
+
+<p id="lat_id"><%= @animal.latitude %></p>
+
+<p id="lng_id"><%= @animal.longitude %></p>
+
+<div id="map"></div>
+
 
 <hr>
 

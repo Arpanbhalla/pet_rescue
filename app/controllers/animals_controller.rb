@@ -4,11 +4,18 @@ class AnimalsController < ApplicationController
 
         def index
           @all_animals = Animal.all
-          if params[:search]
+
+          if params[:search].present?
             @search_text="%#{params[:search]}%"
             @animals = @all_animals.where("lower(species) LIKE ?",  @search_text.downcase).order("created_at DESC")
           else
-            @animals = @all_animals.all.order('created_at DESC')
+            @animals = @all_animals.order('created_at DESC')
+          end
+
+          if params[:distance].present? && params[:area].present?
+            distance = params[:distance]
+            area = params[:area]
+            @animals = @animals.near(area, distance.to_i, :order => :address)
           end
         end
 
@@ -52,6 +59,6 @@ class AnimalsController < ApplicationController
 
         private
         def animal_params
-          params.require(:animal).permit(:species, :breed, :sex, :dob, :description, :price, :user_id)
+          params.require(:animal).permit(:species, :breed, :sex, :dob, :description, :price, :user_id,:longitude, :latitude, :address)
         end
 end
