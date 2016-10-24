@@ -27,7 +27,7 @@ a1 = Animal.create ({
   :breed => "British Giant",
   :sex => "Male",
   :dob => "03/09/2000" ,
-  :images => ['pgy4zfjqpbz6gnaxaeml','h90b2zfgid6neniwwmcv'],
+  :images => ['http://res.cloudinary.com/dbgvixfy4/image/upload/v1477180184/pgy4zfjqpbz6gnaxaeml.jpg','http://res.cloudinary.com/dbgvixfy4/image/upload/v1477180161/h90b2zfgid6neniwwmcv.jpg'],
   :description => "large size, long broad body, solid and firm condition, broad head, erect ears and bold eyes. Coat: 1.9 to 2.54cms (¾ to 1 inch) in length, thick and very dense, medium texture (not harsh or soft).Colour: in OZ - brown grey (agouti) & opal – overseas white, dark steel grey & blue. Minimum Adult weight: bucks 5.670 kgs (12 ½ lbs). Does 6.123 kgs (13 ½ lbs).
 ",
   :price => "$300.00"
@@ -38,7 +38,7 @@ a1 = Animal.create ({
     :breed => "Labrador",
     :sex => "Female",
     :dob => "03/09/2005" ,
-    :images => ['qvb6krp39obtcslhbkgl','d0oimvnhlkzslw1oxl0a'],
+    :images => ['http://res.cloudinary.com/dbgvixfy4/image/upload/v1477130238/qvb6krp39obtcslhbkgl.jpg','http://res.cloudinary.com/dbgvixfy4/image/upload/v1477130231/mtbprkze4tkzmamgjgba.jpg'],
     :description => "Labrador Retriever
     The Labrador Retriever was bred to be both a friendly companion and a useful working dog breed.Good with small Kids",
     :price => "$100.00"

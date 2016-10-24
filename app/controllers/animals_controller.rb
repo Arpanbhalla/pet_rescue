@@ -3,7 +3,13 @@ class AnimalsController < ApplicationController
         before_action :authorise
 
         def index
-          @animals = Animal.all
+          @all_animals = Animal.all
+          if params[:search]
+            @search_text="%#{params[:search]}%"
+            @animals = @all_animals.where("lower(species) LIKE ?",  @search_text.downcase).order("created_at DESC")
+          else
+            @animals = @all_animals.all.order('created_at DESC')
+          end
         end
 
         def new
