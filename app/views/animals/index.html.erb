@@ -1,24 +1,25 @@
 
-<%= form_tag(animals_path, :method => "get", class: "form") do %>
-<div class="row">
+<%= form_tag(animals_path, :method => "get", class: "search-form") do %>
     <%= text_field_tag :search, params[:search], placeholder: "Search Species" %>
   <!-- geocoder -->
     <%= text_field_tag :area, params[:area], :placeholder => "Search near..."  %>
-    <%= number_field_tag :distance, params[:distance], :placeholder => "Distance"  %>
-    <%= submit_tag "Search", :class => 'button', :name => nil %>
-  </div>
+    <%= number_field_tag :distance, params[:distance], :class => "search-form-distance", :placeholder => "Distance"  %>
+    <button type="submit" <%= submit_tag "Search", class: "search-form-button"%><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
 
 <% end %>
   <!-- geocoder -->
+<div class="container-fluid">
+  <div class="row">
 
+  <% @animals.each do |animal| %>
+      <div class="col-md-2">
+        <%if animal.images.present?%>
+          <%= link_to animal_path(animal) do %> <%= cl_image_tag(animal.images[0], :width => 150, :height => 150, :class => 'thumbnail') %><% end %>
+        <%else%>
+          Image not available
+        <%end%>
+      </div>
+  <% end %>
+</div>
 
-
-<% @animals.each do |w| %>
-  <%if w.images.present?%>
-  <div class="thumbnail">
-    <%= link_to animal_path(w) do %> <%= cl_image_tag(w.images[0]) %><% end %>
-  </div>
-  <%else%>
-    Image not available
-  <%end%>
-<% end %>
+</div>

@@ -17,12 +17,13 @@
 @import 'slick-theme';
 
 .scroller {
+  padding: 0;
+  display: block;
+  max-width: 500px;
   div {
+    display: block;
     text-align: center;
     font-size: 30px;
-  }
-  .thumbnail {
-    max-width: 40%;
   }
 }
 
@@ -31,9 +32,9 @@
 }
 
 .slick-next {
-  right: -5px;
+  right: -50px;
 }
 
 .slick-prev {
-  left: -5px;
+  left: -50px;
 }
