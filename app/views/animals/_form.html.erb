@@ -1,5 +1,5 @@
 <%= form_for(@animal, :html => {:multipart => true}) do |f| %>
-    <%= f.select :species, ['Bearded Dragon',
+    <%= f.select :species, options_for_select(['Bearded Dragon',
     'Birds',
     'Burro',
     'Cats',
@@ -40,15 +40,13 @@
     'Sugar Gliders',
     'Tarantula',
     'Turkeys',
-    'Turtles'
-    ], :prompt => 'Select Animal Species' ,:required => true %>
-
+    'Turtles']), {:required => true}, class: "species-select" %>
     <%= f.text_field :breed, :required => true ,:placeholder => "Breed"%>
     <%= f.text_field :sex, :required => true, :placeholder => "Sex" %>
     <%= f.text_field :dob, :required => true, :placeholder => "Date of Birth" %>
+    <%= f.text_field :address, :required => true, :placeholder => "Postal Address" %>
     <%= f.text_field :description, :required => true, :placeholder => "Description" %>
     <%= f.text_field :price, :required => true, :placeholder => "Price" %>
     <%= f.file_field(:image, :multiple => true) %>
-    <%= f.text_field :address, :required => true, :placeholder => "Postal Address" %>
-    <%= f.submit %>
+    <button type="submit" <%= f.submit "Submit" %>Submit</button>
 <% end %>

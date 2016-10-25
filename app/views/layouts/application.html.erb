@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>pet_rescue</title>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>pet_rescue</title>
 
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <%= csrf_meta_tags %>
-  <%= cloudinary_js_config %>
-</head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %>
+    <%= cloudinary_js_config %>
+  </head>
+
 <body class='<%=controller_name%> <%=action_name %>'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
   <% if flash[:success] %>
     <h1><%= flash[:success] %></h1>
@@ -38,32 +39,49 @@
         <% if current_page?(login_path) || current_page?(new_user_path)%>
           <a class="navbar-brand">Pet Rescue</a>
         <%else%>
-          <a class="navbar-brand" href="/">
-            <img class="img-responsive" alt="Brand" src="https://res.cloudinary.com/dbgvixfy4/image/upload/v1477307547/pet_rescue_bxgzlz.png">
+          <a class="navbar-brand">
+            <img class="img-responsive" alt="Brand" src="http://res.cloudinary.com/dbgvixfy4/image/upload/c_scale,w_25/v1477307547/pet_rescue_bxgzlz.png">
           </a>
         <%end%>
       </div>
-
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="collapsed-navbar">
+        <% if logged_in? %>
+        <ul class="nav navbar-nav navbar-left">
+          <li role="presentation"><%= link_to "All Animals", animals_path %></li>
+        </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <%="#{@current_user.first_name.capitalize}"%>
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Post a Pet", new_animal_path%></li>
+                <li><%= link_to "View Profile", user_path(@current_user) %></li>
+                <li><%= link_to "Edit Profile", edit_user_path(@current_user.id) %></li>
+                <li role="separator" class="divider"></li>
+                <li><%= link_to( "Log out", logout_path(), :method => :delete ) %></li>
+              </ul>
+            </ul>
+          <% else %>
+            <ul class="nav navbar-nav navbar-right">
+              <li><%= link_to "Log in", login_path %></li>
+              <li><%= link_to "Sign up", new_user_path %></li>
+            </ul>
+          <% end %>
+        </div>
+  </div>
 </nav>
 
-  <!-- <nav class = "navigtion_landing_page">
+  <footer class="footer">
+    <p>
+      Conceptualized and Created by Arpan Bhalla <br> © 2016 Copyright
+    </p>
+  </footer>
 
-    <% unless @current_user.present? %>
-      <%#= link_to( "Sign up", new_user_path(), :class =>"btn_signup" ) %>
-    <% else %>
-      <div>Welcome <%#=  @current_user.first_name %></div>
-      <%#= link_to( "Log out", logout_path(), :method => :delete, :class => "btn_logout") %>
-      <%#= link_to "Post a pet", new_animal_path, :class =>"post_new_pet"%>
-      <%#= link_to "Edit your Profile", edit_user_path(@current_user.id) %>
-      <%#= link_to "Delete Account", user_path( @current_user.id ), :method => :delete, :class => "delete_account" , :data => { :confirm => "Are you sure?" }%>
-      <%#= link_to "All Animal", animals_path %>
+  <%= yield %>
 
-    <% end %>
-  </nav>  -->
-
-   <div class="container">
-    <%= yield %>
-  </div>
 
 </body>
 </html>

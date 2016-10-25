@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery.slick
+//= require bootstrap-sprockets
 //= require initialize
 //= require_tree .
