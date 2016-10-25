@@ -4,17 +4,22 @@
 @import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic);
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
-.thumbnail {
-  img {
-    width: 40%;
-  }
-}
-
 #map {
   height: 200px;
   weight: 200px;
 }
 
+.pet-image {
+  img {
+  display: block;
+  width: 100%;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)
+  );
+  border: 2px solid black;
+  }
+}
 .navbar-brand {
 	font-weight: bolder;
 }
@@ -32,6 +37,76 @@
 		rgba(0, 0, 0, 0.3)
 	);
 	border-radius: 2%;
+}
+
+.search-form {
+  position: relative;
+  z-index: 1;
+  padding: 30px;
+  display: 50% 50%;
+  text-align: center;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)
+  );
+  border-radius: 2%;
+}
+
+.search-form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 30%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+input.search-form-distance {
+  width: 10%;
+}
+.search-form-button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: none;
+  width: 2%;
+  border: 0;
+  padding: 5px;
+  color: #FFFFFF;
+  font-size: 20px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+	font-weight: bold;
+	text-decoration: none;
+}
+.search-form button:hover,.search-form button:active,.search-form button:focus {
+  background: none;
+	text-decoration: #43A047;
+}
+.comment-form {
+  @extend .form;
+  margin-bottom: 10%;
+}
+
+.comment-form .comment-button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 30%;
+  border: 0;
+  padding: 10px;
+  color: #FFFFFF;
+  font-size: 15px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .animal-search {
@@ -56,6 +131,10 @@
 .form h4 {
 	color: white;
 	font-weight: bold;
+}
+
+.form p {
+	color: white;
 }
 
 .form input {
@@ -212,7 +291,7 @@ body {
 	padding-left: 0;
 	padding-right: 0;
 	padding-top: 0;
-	padding-bottom: 0px;
+	padding-bottom: 200px;
 	margin-right: auto;
 	margin-left: auto;
 	margin-bottom: 200px;

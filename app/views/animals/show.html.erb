@@ -1,8 +1,8 @@
 
-<div class="scroller">
+<div class="scroller center-block">
   <% @animal.images.each do |image| %>
   <div class="thumbnail">
-    <%= cl_image_tag(image, class: 'pet-image')%>
+    <%= cl_image_tag(image)%>
   </div>
   <% end %>
 </div>
@@ -43,14 +43,12 @@
 </div>
 
 <div class="row">
-  <div class="form">
+  <div class="comment-form">
     <h4>Comments</h4>
-
     <% @animal.comments.order("created_at ASC").each do |c| %>
-      <p><%= c.user.first_name if c.user %> Says :<%= c.body %></p>
+      <p><strong><%= c.user.first_name if c.user %></strong>: "<%= c.body %>"</p>
     <% end %>
     <br>
-    <h4>Add a comment below:</h4>
     <%= render 'comments/form' %>
   </div>
 </div>
