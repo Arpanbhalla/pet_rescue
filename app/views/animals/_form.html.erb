@@ -43,10 +43,10 @@
     'Turtles']), {:required => true}, class: "species-select" %>
     <%= f.text_field :breed, :required => true ,:placeholder => "Breed"%>
     <%= f.text_field :sex, :required => true, :placeholder => "Sex" %>
-    <%= f.text_field :dob, :required => true, :placeholder => "Date of Birth" %>
+    <%= f.date_field :dob, :required => true, :placeholder => "Date of Birth" %>
     <%= f.text_field :address, :required => true, :placeholder => "Postal Address" %>
     <%= f.text_field :description, :required => true, :placeholder => "Description" %>
     <%= f.text_field :price, :required => true, :placeholder => "Price" %>
-    <%= f.file_field(:image, :multiple => true) %>
+    <%= f.file_field(:image, :multiple => true, :required => true) %>
     <button type="submit" <%= f.submit "Submit" %>Submit</button>
 <% end %>

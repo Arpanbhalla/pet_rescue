@@ -18,12 +18,11 @@
 
 <%= form_for @user do |f| %>
   <%= f.email_field :email, :required => true , :placeholder => "Email"%>
-  <%= f.text_field :first_name, :required => true, :placeholder => "First Name", :class => "first_name" %>
-  <%= f.text_field :last_name, :required => true , :placeholder => "Last Name", :class => "last_name"%>
+  <%= f.text_field :first_name, :required => true, :placeholder => "First Name" %>
+  <%= f.text_field :last_name, :required => true , :placeholder => "Last Name" %>
   <%= f.telephone_field :mobile, :required => true , :placeholder => "Mobile Number"%>
   <%= f.password_field  :password, :required => true, :placeholder => "Password" %>
   <%= f.password_field :password_confirmation, :required => true , :placeholder =>"Confirm Password"%>
   <button type="submit" <%= f.submit "Submit" %>Submit</button>
-  <div><%= %></div>
 
 <% end %>

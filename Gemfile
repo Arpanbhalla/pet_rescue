@@ -44,8 +44,6 @@ group :development, :test do
   gem 'byebug'
   gem 'pry-rails'
   gem 'annotate'
-  gem 'cloudinary'
-  gem 'geocoder'
 end
 
 group :production do

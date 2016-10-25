@@ -3,7 +3,6 @@
 #  email           :string
 #  first_name      :string
 #  last_name       :string
-#  address         :string
 #  mobile          :text
 #  image           :text
 #  admin           :boolean          default(FALSE)
@@ -16,9 +15,7 @@
   <% end %>
 <% end %>
 
-<div class = "login">
-  <div class = "form">
-    <h1>Edit Profile</h1>
-    <%= render :partial => 'form' %>
-  </div>
+<div class = "form">
+  <h1>Edit Profile</h1>
+  <%= render :partial => 'form' %>
 </div>

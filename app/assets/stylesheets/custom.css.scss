@@ -1,8 +1,51 @@
+@import 'slick';
+@import 'slick-theme';
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 @import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic);
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+
+.scroller {
+  div {
+  text-align: center;
+  height: 300px;
+  width: 300px;
+  object-fit: none;
+  overflow: hidden;
+  align-items: center;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 999;
+  opacity: 1;
+  border:5px solid #DCECF5;
+  border-radius: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  }
+  img {
+   max-width: 25%;
+  }
+}
+.slick-prev::before, .slick-next::before {
+ color: green;
+}
+
+.slick-next {
+ right: -5px;
+}
+
+.slick-prev {
+ left: -5px;
+}
+
+#map {
+  height: 200px;
+  weight: 200px;
+}
 
 .navbar-brand {
 	font-weight: bolder;
@@ -12,7 +55,7 @@
 	@extend .center-block;
   position: relative;
   z-index: 1;
-	padding: 10px;
+	padding: 30px;
   max-width: 500px;
 	display: 50% 50%;
   text-align: center;
@@ -21,13 +64,19 @@
 		rgba(0, 0, 0, 0.3)
 	);
 	border-radius: 2%;
-	padding-bottom: 5em;
 }
 
 .form h1 {
+	font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
 	color: white;
 	font-weight: bolder;
 }
+
+.form h4 {
+	color: white;
+	font-weight: bold;
+}
+
 .form input {
   font-family: "Roboto", sans-serif;
   outline: 0;
@@ -53,9 +102,16 @@
   transition: all 0.3 ease;
   cursor: pointer;
 	font-weight: bold;
+	text-decoration: none;
 }
 .form button:hover,.form button:active,.form button:focus {
   background: #43A047;
+	text-decoration: none;
+}
+
+.form a {
+  color: white;
+  text-decoration: none;
 }
 .form .message {
   margin: 15px 0 0;
@@ -70,6 +126,61 @@
 .form .register-form {
   display: none;
 }
+
+.show-form {
+	@extend .form;
+	color: #FFFFFF;
+  font-size: 15px;
+	font-weight: bold;
+	text-align: left;
+}
+
+.action-button {
+	color: #FFFFFF;
+  font-size: 15px;
+	padding: 10px;
+	background: #4CAF50;
+	font-weight: bolder;
+}
+
+.user-details h4{
+	color: white;
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+.user-details button {
+	font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 30%;
+  border: 0;
+  padding: 10px;
+  color: #FFFFFF;
+  font-size: 10px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.user-details a {
+  color: white;
+  text-decoration: none;
+}
+
+.row {
+	text-align: center;
+}
+
+.row h1 {
+	font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
+	color: white;
+	font-weight: bolder;
+}
+
 .container {
   position: relative;
   z-index: 1;
@@ -105,7 +216,12 @@
 }
 
 body {
-	background: url('background.jpg') no-repeat;
+	background:
+		linear-gradient(
+			rgba(0, 0, 0, 0.4),
+			rgba(0, 0, 0, 0.4)
+		),
+		url('background.jpg') no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -115,9 +231,10 @@ body {
 	padding-left: 0;
 	padding-right: 0;
 	padding-top: 0;
-	padding-bottom: 0;
+	padding-bottom: 0px;
 	margin-right: auto;
 	margin-left: auto;
+	margin-bottom: 200px;
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

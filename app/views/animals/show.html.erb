@@ -1,69 +1,48 @@
-<!-- <h2 class="heading"><%#= @animal.species %></h2> -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-Jcwb5bQHf6lfuntM3n8rRamkTu5Gdjw&callback=initMap" async defer></script>
 
-<nav class="navigation-left">
-  <%= link_to "All animals", animals_path, :class => "all_animals"%>
-  <% if @current_user == @animal.user %>
-  <li class="dropdown">
-    <a href="#" class="dropbtn">My Petsale</a>
-    <div class="dropdown-content">
-      <a href="a"></a><%= link_to "Edit Animal", edit_animal_path(@animal.id) %></a>
-      <a href="#"></a><%= link_to "Delete Animal", @animal, :method => :delete, :data => { :confirm => "Are you sure?" } %></a>
-    </div>
-  </li>
-  <% end %>
+  <div class="scroller">
+    <% @animal.images.each do |i| %>
+      <%= cl_image_tag(i)%>
+    <% end %>
+  </div>
 
-</nav>
-<p>Animal Type: <%= @animal.species %></p>
+<div class="row">
+  <div class="show-form">
+    <p>Animal Type: <%= @animal.species %></p>
+    <p>Breed: <%= @animal.breed %></p>
+    <p>Sex: <%= @animal.sex %></p>
+    <p>Date of birth: <%= @animal.dob %></p>
+    <p>Description: <%= @animal.description %></p>
+    <p>Price: <%= @animal.price %></p>
+    <p>Location : <%= @animal.address %></p>
 
-<p>Breed: <%= @animal.breed %></p>
+    <% if @current_user != @animal.user %>
+      <p>Contact Seller :
+      <td>
+        <%= link_to user_path(@animal.user), class: 'action-button' do %> <%= "#{@animal.user.first_name}" %><% end %>
+      </td>
+    </p><br>
+    <% end %>
 
-<p>Sex: <%= @animal.sex %></p>
-
-<p>Date of birth: <%= @animal.dob %></p>
-
-<p>Description: <%= @animal.description %></p>
-
-<p>Price: <%= @animal.price %></p>
-<p>Location : <%= @animal.address %></p>
-
-
-<% if @current_user == @animal.user %>
-  <p>My Ad : <%= link_to(@animal.user.first_name, @animal.user) %></p>
-<% elsif @animal.user %>
-  <p>Contact Seller : <%= link_to(@animal.user.first_name, @animal.user) %></p>
-<% end %>
-
-<%= content_tag :div, class: "lat", data: {lat: @animal.latitude} do %>
-<%end%>
-<%= content_tag :div, class: "lng", data: {lng: @animal.longitude} do %>
-<%end%>
-
-<p id="lat_id"><%= @animal.latitude %></p>
-
-<p id="lng_id"><%= @animal.longitude %></p>
-
-<div id="map"></div>
-
-
-<hr>
-
-<div class="scroller">
-  <% @animal.images.each do |i| %>
-    <%= cl_image_tag(i, :class => 'animal_display_image')%>
-  <% end %>
+    <%= content_tag :div, class: "lat", data: {lat: @animal.latitude} do %>
+    <%end%>
+    <%= content_tag :div, class: "lng", data: {lng: @animal.longitude} do %>
+    <%end%>
+    <p id="lat_id"><%= @animal.latitude %></p>
+    <p id="lng_id"><%= @animal.longitude %></p>
+      <div id="map"></div>
+  </div>
 </div>
 
+<div class="row">
+  <div class="form">
+    <h4>Comments</h4>
 
-<hr>
-<h3>Comments</h3>
-
-<% @animal.comments.order("created_at ASC").each do |c| %>
-    <ul>
-      <li><%= c.user.first_name if c.user %> Says :<%= c.body %></li> <br>
-
-    </ul>
-<% end %>
-<br>
-<h3>Add a comment below:</h3>
-<%= render 'comments/form' %>
+    <% @animal.comments.order("created_at ASC").each do |c| %>
+      <p><%= c.user.first_name if c.user %> Says :<%= c.body %></p>
+    <% end %>
+    <br>
+    <h4>Add a comment below:</h4>
+    <%= render 'comments/form' %>
+  </div>
+</div>
