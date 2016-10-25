@@ -22,16 +22,6 @@ function initMap() {
 
 }
 
-function slider() {
-  $('.scroller').slick({
-    dots: true,
-    infinite: true,
-    speed: 500,
-    fade: true,
-    cssEase: 'linear'
-  })
-}
-
 $(document).ready(function() {
   latitude = parseFloat($("#lat_id").text());
   longitude = parseFloat($("#lng_id").text());
