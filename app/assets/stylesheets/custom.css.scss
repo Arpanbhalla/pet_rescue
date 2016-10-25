@@ -4,18 +4,33 @@
 @import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic);
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
+.navbar-brand > img {
+    width: 5%;
+}
+
 .login-page {
-  width: 360px;
+  width: 500px;
   padding: 8% 0 0;
   margin: auto;
 }
+
 .form {
   position: relative;
   z-index: 1;
-  max-width: 360px;
-  margin: 0 auto 100px;
-  padding: 45px;
+	padding: 10px;
+  max-width: 500px;
+	display: 50% 50%;
   text-align: center;
+	background: linear-gradient(
+		rgba(0, 0, 0, 0.3),
+		rgba(0, 0, 0, 0.3)
+	);
+	border-radius: 2%;
+}
+
+.form h1 {
+	color: white;
+	font-weight: bolder;
 }
 .form input {
   font-family: "Roboto", sans-serif;
@@ -37,17 +52,18 @@
   border: 0;
   padding: 15px;
   color: #FFFFFF;
-  font-size: 14px;
+  font-size: 20px;
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
+	font-weight: bold;
 }
 .form button:hover,.form button:active,.form button:focus {
   background: #43A047;
 }
 .form .message {
   margin: 15px 0 0;
-  color: #707070;
+  color: white;
 	font-weight: bold;
   font-size: 15px;
 }
@@ -93,12 +109,7 @@
 }
 
 body {
-	background:
-		linear-gradient(
-			rgba(0, 0, 0, 0.2),
-			rgba(0, 0, 0, 0.2)
-		),
-		url('back5.jpg') no-repeat;
+	background: url('background.jpg') no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;

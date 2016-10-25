@@ -16,35 +16,9 @@
   <% end %>
 <% end %>
 
-<div class = "sign_up">
-<%= form_for @user do |f| %>
-  <p>
-    <%= f.email_field :email, :required => true , :placeholder => "Email"%>
-  </p>
-  <p>
-    <%= f.text_field :first_name, :required => true, :placeholder => "First Name" %>
-  </p>
-  <p>
-    <%= f.text_field :last_name, :required => true , :placeholder => "Last Name"%>
-  </p>
-  <p>
-    <%= f.url_field :password, :required => false , :placeholder => "Enter profile picture"%>
-  </p>
-  <p>
-    <%= f.text_field :address, :required => true, :placeholder => "Postal Address" %>
-  </p>
-  <p>
-    <%= f.telephone_field :mobile, :required => true , :placeholder => "Mobile Number"%>
-  </p>
-  <p>
-  <p>
-    <%= f.password_field  :password, :required => true, :placeholder => "Password" %>
-  </p>
-  <p>
-    <%= f.password_field :password_confirmation, :required => true , :placeholder =>"Confirm Password"%>
-  </p>
-<<%= f.submit "Edit" %>
-
-<% end %>
-
+<div class = "login">
+  <div class = "form">
+    <h1>Edit Profile</h1>
+    <%= render :partial => 'form' %>
+  </div>
 </div>
