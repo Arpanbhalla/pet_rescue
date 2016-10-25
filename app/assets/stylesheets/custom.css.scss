@@ -131,3 +131,10 @@ body {
 	height: 7.5%;
 	color: white;
 }
+.alert-error {
+  @extend .alert-danger;
+}
+
+.alert-success {
+  @extend .alert-success;
+}

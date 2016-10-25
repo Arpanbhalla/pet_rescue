@@ -15,6 +15,6 @@
     <p class="message">Not registered? <%= link_to "Sign up", new_user_path %></p>
 </div>
 
-<% if flash[:error] %>
-  <div class="login_error"><%= flash[:error] %></div>
-<% end %>
+    <% if flash[:error] %>
+      <div class="login_error"><%= flash[:error] %></div>
+    <% end %>

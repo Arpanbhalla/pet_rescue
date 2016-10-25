@@ -10,7 +10,7 @@ class SessionController < ApplicationController
       session[:user_id] = user.id
       redirect_to animals_path()
     else
-      flash[:error] = "Your password or email is incorrect"
+      flash[:error] = "Invalid email/password combination!"
       redirect_to login_path
     end
   end
@@ -19,5 +19,6 @@ class SessionController < ApplicationController
     session[:user_id] = nil
     flash[:success] = "You successfully logged out"
     redirect_to root_path
+
   end
 end
